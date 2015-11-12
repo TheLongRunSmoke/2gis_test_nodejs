@@ -1,0 +1,142 @@
+@import "variables.less";
+
+html, body{
+    margin: 0;
+    height: 100%;
+    background: @background;
+    color: #1A237E;
+}
+
+input:focus{
+    outline: none;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+.messages{
+    height: 90%;
+    width: @width;
+    margin: 0 auto;
+    padding: @padding;
+
+    li{
+        height: 90%;
+        list-style: none;
+        background: #fff;
+        overflow-y: scroll;
+        padding: @padding;
+
+
+        ul{
+            background: @background;
+            font-size: 14px;
+            border-radius: @padding;
+            width: 90%;
+            margin: @padding auto;
+            padding: @padding-small 0px @padding-small 40px;    // 40px предустановка хрома.
+        }
+    }
+
+    input{
+        height: @mes-height + @padding*2 + @border*2;
+        background: @button;
+        width: @mes-send-width;
+        position: absolute;
+        border: none;
+        padding: 0;
+        margin: 0;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    input:active{
+        color: @button;
+        background: #fff;
+    }
+
+    textarea{
+        display: inline-block;
+        vertical-align: middle;
+        height: @mes-height;
+        width: @width - @mes-send-width - @padding*2 - @border*2;
+        resize: none;
+        border: @border @accent solid;
+        padding: @padding;
+        font-size: 14px;
+    }
+
+}
+
+.login{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    height: 100%;
+
+    .form {
+        width: @login-form-width;
+        height: 200px;
+        margin: auto;
+        background: @background;
+        border-radius: 12px;
+        position: relative;
+        top: 30%;
+        text-align: center;
+        padding-top: 15px;
+        font-size: 20px;
+
+        input {
+            display: block;
+            top: 20px;
+            width: @login-form-width - @padding*2 - @border*2;
+            height: @login-input-height;
+            padding: @padding-small @padding;
+            position: relative;
+            margin: 0;
+            border: 1px @accent solid;
+        }
+
+        input[type="button"] {
+            height: @login-input-height + @padding-small*2 + @border*2;
+            width: @login-form-width;
+            background: @button;
+            color: #fff;
+            border: none;
+        }
+
+        input[type="button"]:active {
+            color: @button;
+            background: #fff;
+        }
+    }
+
+    form::after{
+        content: attr(data-content);
+        position: absolute;
+        display: none;
+        left: @login-form-width;
+        top: 81px;
+        height: 44px;
+        width: 300px;
+        padding: @padding;
+        background: @red;
+        font-size: 14px;
+        line-height: 22px;
+        color: #fff;
+    }
+
+    form.error::after{
+        display: block;
+    }
+}
+
+.users{
+    width: @width;
+    margin: 20px auto;
+}

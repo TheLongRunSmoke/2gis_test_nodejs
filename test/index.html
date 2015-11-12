@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Тесты</title>
+    <link rel="stylesheet" href="/node_modules/mocha/mocha.css">
+    <script src="/node_modules/chai/chai.js" type="text/javascript"></script>
+    <script src="/node_modules/mocha/mocha.js" type="text/javascript"></script>
+    <script>
+        mocha.setup('bdd'); // Использую bdd - поведенческое тестирование
+        var assert = chai.assert;
+    </script>
+</head>
+<body>
+<!--Подключаю клиенсткий js который будет тестироватся-->
+<script src="/js/functions.js" type="text/javascript"></script>
+<!--Подключаю тесты-->
+<script src="test.js"></script>
+<div id="mocha"></div>
+<script>
+    mocha.run();
+</script>
+</body>
+
+</html>
